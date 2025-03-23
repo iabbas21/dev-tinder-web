@@ -18,7 +18,7 @@ const Connections = () => {
   }
 
   useEffect(() => {
-    if(!connections) fetchConnections()
+    fetchConnections()
   }, [])
 
   return (
@@ -41,7 +41,7 @@ const Connections = () => {
             ))}
           </div>
         ) : (
-          <h1>No Connections</h1>
+          <h1 className='text-2xl'>No Connections</h1>
         )
       }
     </div>
