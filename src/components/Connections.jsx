@@ -27,8 +27,8 @@ const Connections = () => {
         connections && connections.length > 0 ? (
           <div>
             <h1 className='text-bold text-3xl text-center'>Connections</h1>
-            {connections.map(connection => (
-                <div className='flex items-center gap-3 bg-base-300 p-3 rounded-lg w-200 m-3'>
+            {connections.map((connection, index) => (
+                <div key={index} className='flex items-center gap-3 bg-base-300 p-3 rounded-lg w-200 m-3'>
                   <div>
                     <img className='w-15 h-15 rounded-full' alt='photo' src={connection.photoUrl}/>
                   </div>
