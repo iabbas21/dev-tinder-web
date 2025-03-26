@@ -26,9 +26,9 @@ const Feed = () => {
 
   return (
     <div className='flex justify-center my-4'>
-      {feed && feed.length > 0 && (
+      {feed && feed.length > 0 ? (
         <UserCard user={feed[0]} />
-      )}
+      ) : <h1 className='text-xl'>No more users</h1>}
     </div>
   )
 }
