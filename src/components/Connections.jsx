@@ -3,10 +3,12 @@ import React, { useEffect } from 'react'
 import { BASE_URL } from '../utils/constants'
 import { useSelector, useDispatch } from 'react-redux'
 import { addConnection } from '../utils/connectionSlice'
+import { useNavigate } from 'react-router-dom'
 
 const Connections = () => {
   const connections = useSelector(state => state.connection)
   const dispatch = useDispatch()
+  const navigate = useNavigate()
 
   const fetchConnections = async () => {
     try {
@@ -37,6 +39,7 @@ const Connections = () => {
                     {connection.age && connection.gender && <p>{connection.age + ", " + connection.gender}</p>}
                     <p>{connection.about}</p>
                   </div>
+                  <button onClick={() => navigate(`/chat/${connection._id}`)} className='btn btn-primary'>Chat</button>
                 </div>
             ))}
           </div>
